@@ -31,7 +31,7 @@ def createUser(request):
     member,created=RoomMember.objects.get_or_create(
         name=data['name'],
         uid=data['UID'],
-        room_name=data['room']
+        room_name=data['room_name']
     )
     return JsonResponse({'name':data['name']},safe=False)
 
@@ -52,7 +52,7 @@ def deleteUser(request):
     member=RoomMember.objects.get(
         name=data['name'],
         uid=data['UID'],
-        room_name=data['room'],
+        room_name=data['room_name'],
     )
     member.delete()
     return JsonResponse('member was deleted',safe=False)
