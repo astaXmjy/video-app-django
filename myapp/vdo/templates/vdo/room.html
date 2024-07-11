@@ -1,22 +1,27 @@
 {% extends 'vdo/main.html' %}
 {% load static %}
 {% block content %}
-   <main>
-  <section id="room-name-wrapper">
-    <p>
-      Room Name: <span id="room-name"></span>
-    </p>
-  </section>
-  <section id="video-streams">
-    <div class="video-container" id="user-container-1">
-      <div class="username-wrappper">
-        <span class="user-name">My Name</span>
-      </div>
-      <div class="video-player" id="user-1"></div>
-    </div>
-  </section>
-   </main>
-   <script type="text/javascript" src="{% static 'js/stream.js' %}">
+  <main>
+    <section id="room-name-wrapper">
+      <p>
+        Room Name: <span id="room-name"></span>
+      </p>
+    </section>
 
-   </script>
+    <section id="video-streams"></section>
+
+    <section id="controls-wrapper">
+      <div class="icon-wrapper">
+        <img class="control-icon" id="mic-btn" src="{% static 'images/mic.png' %}" alt="" />
+      </div>
+      <div class="icon-wrapper">
+        <img class="control-icon" id="camera-btn" src="{% static 'images/video.png' %}" alt="" />
+      </div>
+      <div class="icon-wrapper">
+        <img class="control-icon" id="leave-btn" src="{% static 'images/exit.png' %}" alt="" />
+      </div>
+    </section>
+  </main>
+  <script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.21.0.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/stream.js' %}"></script>
 {% endblock %}
